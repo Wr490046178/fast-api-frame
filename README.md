@@ -151,3 +151,9 @@ token验证格式：
 
 下载依赖：`pip3 install -r quirements.txt`
 启动项目：`python main.py`
+
+
+### 10.数据挂载
+
+详见 /fast-api-frame/db_docker
+推荐 挂载至服务器data目录下

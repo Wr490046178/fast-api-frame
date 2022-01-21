@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  postgres:
+    image: postgres:14.1
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: yMfJn8Wknft8zlq
+      CONTAINER_TIMEZONE: Asia/Shanghai
+      TZ: Asia/Shanghai
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
