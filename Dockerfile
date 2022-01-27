@@ -1,3 +1,4 @@
+# 轻量级测试容器
 FROM rackspacedot/python38:latest
 
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
@@ -8,16 +9,19 @@ RUN apt-get update && apt-get -y install openssh-server vim apt-utils && rm -rf 
 WORKDIR /usr/src/app
 ENV PYTHONPATH /usr/src/app
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-COPY requirements.txt /usr/src/app/requirements.txt
+# 该用pipenv 管理
+RUN pip install pipenv -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+    pipenv install --deploy --system
 
-RUN pip3 install -i https://pypi.douban.com/simple pip==19.0.1 virtualenv==16.1.0 virtualenv-clone==0.4.0 setuptools==39.0.1
-RUN pip3 install -i https://pypi.douban.com/simple -r requirements.txt
+#COPY requirements.txt /usr/src/app/requirements.txt
+#
+#RUN pip3 install -i https://pypi.douban.com/simple pip==19.0.1 virtualenv==16.1.0 virtualenv-clone==0.4.0 setuptools==39.0.1
+#RUN pip3 install -i https://pypi.douban.com/simple -r requirements.txt
 
 COPY . /usr/src/app
 
 EXPOSE 8001
-ENV TZ=Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo '$TZ' > /etc/timezone
 
 CMD ["python3", "/usr/src/main.py"]

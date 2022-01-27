@@ -3,6 +3,7 @@ import uvloop
 import asyncio
 import logging
 import uvicorn
+from core.storage import db
 
 
 from app.ws import create_ws_manager
@@ -48,6 +49,7 @@ def init_sync(app):
 def init_async():
     try:
         loop = asyncio.get_running_loop()
+        print(loop)
     except RuntimeError:  # if cleanup: 'RuntimeError: There is no current event loop..'
         loop = None
 
@@ -71,4 +73,4 @@ init_async()
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, log_level="debug", debug=not config.PROD)
+    uvicorn.run("main:app", host="0.0.0.0", port=8899, log_level="debug", debug=not config.PROD)

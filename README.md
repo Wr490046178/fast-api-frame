@@ -1,6 +1,6 @@
 # 简介
 
-这是一个`fastapi`的脚手架项目，解释器版本至少是python3.7 +，项目集成了`sqlalchemy2(1.4+)`、`JWT Auth`、`websocket`、`i18n`等常用功能，项目的目录结构也比较简单，也封装了一系列的web开发过程中会用到的工具，欢迎大家给项目提提建议。
+这是一个`fastapi`的脚手架项目，解释器版本至少是python3.8 +，项目集成了`sqlalchemy2(1.4+)`、`JWT Auth`、`websocket`、`i18n`等常用功能，项目的目录结构也比较简单，也封装了一系列的web开发过程中会用到的工具，欢迎大家给项目提提建议。
 
 ## 目录结构
 
@@ -30,7 +30,7 @@
 ├── docs  # 项目文档
 ├── main.py  # 入口文件
 ├── manage.py  # manager工具
-├── Dockerfile  # 就是一个DOckerfile
+├── Dockerfile  # 就是一个Dockerfile
 ├── README.md
 └── requirements.txt  # 依赖文件
 ```
@@ -152,7 +152,7 @@ token验证格式：
 
 #### 9.部署
 
-下载依赖：`pip3 install -r quirements.txt`
+下载依赖：`pip3 install -r rquirements.txt`
 启动项目：`python main.py`
 
 

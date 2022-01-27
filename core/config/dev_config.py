@@ -6,7 +6,7 @@ from .base_config import Base, str2bool
 class DevConfig(Base):
     CONFIG_NAME = "DEV"
 
-    DATABASE_MYSQL_URL = os.getenv("DATABASE_MYSQL_URL", "root:dangerous@127.0.0.1:3306/test")
+    DATABASE_MYSQL_URL = os.getenv("DATABASE_MYSQL_URL", "root:dSSALHwSsCiXzPr@192.168.0.126:3306/fastapi")
 
     PROD = str2bool(os.getenv("PROD", "False"))
 

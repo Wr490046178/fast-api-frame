@@ -23,7 +23,7 @@ def str2float(v):
 
 class Base:
     # ------------------- need config ---------------------
-    DATABASE_MYSQL_URL = os.getenv("DATABASE_MYSQL_URL", "root:dangerous@127.0.0.1:3306/test")
+    DATABASE_MYSQL_URL = os.getenv("DATABASE_MYSQL_URL", "root:dSSALHwSsCiXzPr@192.168.0.126:3306/fastapi")
 
     # ------------------- option ---------------------
     CONFIG_NAME = "BASE"
@@ -31,7 +31,7 @@ class Base:
 
     TZ = os.getenv("TZ", "Asia/Shanghai")
 
-    TOKEN_SECRET_KEY = os.getenv("TOKEN_SECRET_KEY", "token_secret_key")
+    TOKEN_SECRET_KEY = os.getenv("TOKEN_SECRET_KEY", "tokensecretkey")
 
     # db
     DATABASE_URL = os.getenv("DATABASE_URL", f"mysql+aiomysql://{DATABASE_MYSQL_URL}?charset=utf8mb4")
